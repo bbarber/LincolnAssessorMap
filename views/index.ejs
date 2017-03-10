@@ -1,6 +1,12 @@
 <% include header %>
 
-  <h1><%-title %></h1>
-  <p>Welcome to <%-title %></p>
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhbm1hbnR3byIsImEiOiJjaXVleHU2c3gwMGNqMm5ueWhqdHM2bzU0In0.Yjvmub_TJiDuCBjlpfV75w';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/branmantwo/ciuexw0s6006m2imv0evw3u9j'
+});
+</script>
 
 <% include footer %>
