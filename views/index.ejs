@@ -16,10 +16,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhbm1hbnR3byIsImEiOiJjaXVleHU2c3gwMGNqMm5ue
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/branmantwo/cj075ufqp00672slfsgd4vufk'
-}).setView([40.807022, -96.68142740.807022], 11);;
+}).setView([40.807022, -96.681427], 11);;
 
 // Store an array of circle-color ramps for data-driven styles
-var lineList = [
+var percentList = [
     ['red', '#FF0000'],
     ['green', '#00FF00'],
     ['blue', '#0000FF']
@@ -28,20 +28,25 @@ var lineList = [
 // Update the layer
 map.on('load', function () {    
     map.addLayer({
-        'id': 'stations_lines',
+        'id': 'AssessedValuesV1',
         'type': 'circle',
         'source': {
             type: 'vector',
             url: 'mapbox://branmantwo.cj075jpzr0q2r33p3kwxfynjg-1l2im' //Your Mapbox tileset Map ID
         },
-        'source-layer': 'stations', //name of tileset
+        'source-layer': 'AssessedValuesV1', //name of tileset
         'paint': {
         //Add data-driven styles for circle-color
         'circle-color': {
-            property: 'line',
-           // type: 'interval',
-            type: 'categorical',
-            stops: lineList
+            property: '2017_totalPercent',
+            type: 'exponential',
+            "stops": [
+                [95, "#ff4e00"],
+                [100, "#eace28"],
+                [105, "#ffffff"],
+                [110, "#43aaf7"],
+                [115, "#1129d3"]
+            ]
         },
         //Add data-driven styles for circle radius
         'circle-radius': 10,
