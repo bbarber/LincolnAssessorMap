@@ -15,8 +15,8 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnJhbm1hbnR3byIsImEiOiJjaXVleHU2c3gwMGNqMm5ueWhqdHM2bzU0In0.Yjvmub_TJiDuCBjlpfV75w';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/branmantwo/cj04gl8ah004k2rrrfjo66hpw'
-});
+    style: 'mapbox://styles/branmantwo/cj075ufqp00672slfsgd4vufk'
+}).setView([40.807022, -96.68142740.807022], 11);;
 
 // Store an array of circle-color ramps for data-driven styles
 var lineList = [
@@ -32,7 +32,7 @@ map.on('load', function () {
         'type': 'circle',
         'source': {
             type: 'vector',
-            url: 'mapbox://branmantwo.cj04g7jtg0frr33qrw6d89e6x-4j8sn' //Your Mapbox tileset Map ID
+            url: 'mapbox://branmantwo.cj075jpzr0q2r33p3kwxfynjg-1l2im' //Your Mapbox tileset Map ID
         },
         'source-layer': 'stations', //name of tileset
         'paint': {
