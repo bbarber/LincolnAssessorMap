@@ -20,12 +20,7 @@ var map = new mapboxgl.Map({
     zoom: 11
 });
 
-// Store an array of circle-color ramps for data-driven styles
-var percentList = [
-    ['red', '#FF0000'],
-    ['green', '#00FF00'],
-    ['blue', '#0000FF']
-];
+
 
 // Update the layer
 map.on('load', function () {    
@@ -43,16 +38,23 @@ map.on('load', function () {
             property: 'i2017_totalPercent',
             type: 'exponential',
             "stops": [
-                [95, "#ff4e00"],
-                [100, "#eace28"],
-                [105, "#ffffff"],
-                [110, "#43aaf7"],
-                [115, "#1129d3"]
+                [0   , "#21444F"]
+                [95  , "#21444F"],
+                [100 , "#344C5D"],
+                [105 , "#4A526A"],
+                [110 , "#625875"],
+                [115 , "#7C5D7C"],
+                [120 , "#96617F"],
+                [125 , "#AF667F"],
+                [130 , "#C56C7B"],
+                [135 , "#D87575"],
+                [140 , "#E7806D"],
+                [999 , "#E7806D"]
             ]
         },
         //Add data-driven styles for circle radius
-        'circle-radius': 10,
-        'circle-opacity': 0.8
+        'circle-radius': 100,
+        'circle-opacity': 0.2
         }
     });
 });
